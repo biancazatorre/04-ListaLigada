@@ -126,9 +126,13 @@ void inserirElemento()
 
 	cout << "Digite o elemento: ";
 	cin >> novo->valor;
+	NO* posicao = posicaoElemento(novo->valor);
 	novo->prox = NULL;
 
-	if (primeiro == NULL)
+	if (posicao != NULL) {
+		cout << "Esse elemento ja existe";
+	} 
+	else if (primeiro == NULL)
 	{
 		primeiro = novo;
 	}
@@ -150,7 +154,17 @@ void excluirElemento()
 
 void buscarElemento()
 {
-	
+	int valor;
+	cout << "Digite o elemento que queira buscar: ";
+	cin >> valor;
+	NO* pos = posicaoElemento(valor);
+	if (pos != NULL) {
+		cout << "ENCONTRADO";
+	}
+	else
+	{
+		cout << "NAO ENCONTRADO";
+	}
 }
 
 
