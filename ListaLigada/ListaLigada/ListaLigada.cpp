@@ -149,6 +149,21 @@ void inserirElemento()
 
 void excluirElemento()
 {
+	int del; 
+	cout <<"digite o número a ser excluído";
+	cin >> del;
+	NO* delet = posicaoElemento (del);
+	if (delet == primeiro) {
+		primeiro = primeiro -> prox;
+	}
+	else if (delet!= NULL) {
+		NO* aux = primeiro;
+		while (aux -> prox != delet){
+			aux = aux -> prox;
+		}
+		aux->prox = delet->prox;
+		free(delet);
+	}
 	
 }
 
